@@ -2,22 +2,27 @@ package org.example.ReadingAndWriting;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class TXT {
-    public static ArrayList<String> ReadTXT(String filePath) {
-        ArrayList<String> input = new ArrayList<>();
-        try(BufferedReader br = new BufferedReader(new FileReader(filePath))) {
-            String line;
-            while((line = br.readLine()) != null) {
-                input.add(line);
+    public static ArrayList<ArrayList<String>> ReadTXT(String filePath) {
+        try {
+            ArrayList<ArrayList<String>> lines = new ArrayList<>();
+            Scanner reader = new Scanner(new FileReader(filePath));
+            while(reader.hasNextLine()) {
+                ArrayList<String> tmp = new ArrayList<>();
+                tmp.add(reader.nextLine() + "\n");
+                lines.add(tmp);
             }
+            reader.close();
+            return lines;
         } catch (IOException e) {
             e.printStackTrace();
+            return null;
         }
-        return input;
     }
 
-    public static void WriteTXT(ArrayList<String> lines, String filePath) {
+    /*public static void WriteTXT(ArrayList<String> lines, String filePath) {
         try(BufferedWriter bw = new BufferedWriter(new FileWriter(filePath))) {
             for(String line : lines) {
                 bw.write(line);
@@ -26,5 +31,5 @@ public class TXT {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 }

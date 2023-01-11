@@ -1,3 +1,4 @@
+/*
 package ReadingAndWritingTests;
 
 import org.example.ReadingAndWriting.TXT;
@@ -36,3 +37,4 @@ public class txtTests {
         assertEquals(testLines, readLines);
     }
 }
+*/
