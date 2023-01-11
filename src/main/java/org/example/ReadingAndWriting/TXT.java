@@ -11,7 +11,7 @@ public class TXT {
             Scanner reader = new Scanner(new FileReader(filePath));
             while(reader.hasNextLine()) {
                 ArrayList<String> tmp = new ArrayList<>();
-                tmp.add(reader.nextLine() + "\n");
+                tmp.add(reader.nextLine());
                 lines.add(tmp);
             }
             reader.close();
@@ -21,15 +21,4 @@ public class TXT {
             return null;
         }
     }
-
-    /*public static void WriteTXT(ArrayList<String> lines, String filePath) {
-        try(BufferedWriter bw = new BufferedWriter(new FileWriter(filePath))) {
-            for(String line : lines) {
-                bw.write(line);
-                bw.newLine();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }*/
 }
