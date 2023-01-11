@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.Calculation.Calculation;
 import org.example.ReadingAndWriting.JSON;
 import org.example.ReadingAndWriting.TXT;
 import org.example.ReadingAndWriting.XML;
@@ -16,5 +17,8 @@ public class Main {
 
         ArrayList<ArrayList<String>> xmlLines = XML.ReadXML("inputFiles/input.xml");
         System.out.println("xmlLines = " + xmlLines);
+
+        ArrayList<ArrayList<String>> res = Calculation.Calc(xmlLines);
+        System.out.println(res);
     }
 }
