@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Expressions>
+    <expressions>
+        <expression0>10+4</expression0>
+        <expression1>4*2</expression1>
+    </expressions>
+    <expressions>
+        <expression0>5*4</expression0>
+        <expression1>11-4</expression1>
+    </expressions>
+    <expressions>
+        <expression0>(52-2)/2</expression0>
+    </expressions>
+</Expressions>
