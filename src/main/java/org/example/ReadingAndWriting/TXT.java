@@ -6,8 +6,13 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class TXT {
-    public static ArrayList<ArrayList<String>> ReadTXT(String filePath) {
+public class TXT extends FileReaderWriterInfo {
+    public TXT(String filePath) {
+        super(filePath);
+    }
+
+    @Override
+    public ArrayList<ArrayList<String>> Read(String filePath) {
         try {
             ArrayList<ArrayList<String>> lines = new ArrayList<>();
             Scanner reader = new Scanner(new FileReader(filePath));
@@ -24,7 +29,8 @@ public class TXT {
         }
     }
 
-    public static void WriteTXT(ArrayList<ArrayList<String>> lines, String filePath) {
+    @Override
+    public void Write(ArrayList<ArrayList<String>> lines, String filePath) {
         try {
             FileWriter writer = new FileWriter(filePath);
             for(int i = 0; i < lines.size(); ++i) {
@@ -39,7 +45,8 @@ public class TXT {
         }
     }
 
-    public static void WriteTXTResult(ArrayList<ArrayList<String>> lines, String filePath) {
+    @Override
+    public void WriteResult(ArrayList<ArrayList<String>> lines, String filePath) {
         try {
             FileWriter writer = new FileWriter(filePath);
             ArrayList<ArrayList<String>> calc = Calculation.Calc(lines);

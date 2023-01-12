@@ -19,8 +19,13 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class XML {
-    public static ArrayList<ArrayList<String>> ReadXML(String filePath) throws Exception {
+public class XML extends FileReaderWriterInfo {
+    public XML(String filePath) {
+        super(filePath);
+    }
+
+    @Override
+    public ArrayList<ArrayList<String>> Read(String filePath) throws Exception {
         try {
             ArrayList<ArrayList<String>> lines = new ArrayList<>();
             XMLInputFactory factory = XMLInputFactory.newInstance();
@@ -58,13 +63,14 @@ public class XML {
         return line;
     }
 
-    static Node getLanguageElements(Document doc, Element element, String name, String value) {
+    private static Node getLanguageElements(Document doc, Element element, String name, String value) {
         Element node = doc.createElement(name);
         node.appendChild(doc.createTextNode(value));
         return node;
     }
 
-    public static void WriteXMLResult(ArrayList<ArrayList<String>> lines, String filePath) throws ParserConfigurationException, TransformerException {
+    @Override
+    public void WriteResult(ArrayList<ArrayList<String>> lines, String filePath) throws ParserConfigurationException, TransformerException {
         ArrayList<ArrayList<String>> calc = Calculation.Calc(lines);
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder;
@@ -83,7 +89,8 @@ public class XML {
         transform.transform(source, result);
     }
 
-    public static void WriteXML(ArrayList<ArrayList<String>> lines, String filePath) throws ParserConfigurationException, TransformerException {
+    @Override
+    public void Write(ArrayList<ArrayList<String>> lines, String filePath) throws ParserConfigurationException, TransformerException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder;
         builder = factory.newDocumentBuilder();
