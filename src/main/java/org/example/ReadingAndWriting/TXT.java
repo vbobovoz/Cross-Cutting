@@ -1,5 +1,7 @@
 package org.example.ReadingAndWriting;
 
+import org.example.Calculation.Calculation;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -19,6 +21,37 @@ public class TXT {
         } catch (IOException e) {
             e.printStackTrace();
             return null;
+        }
+    }
+
+    public static void WriteTXT(ArrayList<ArrayList<String>> lines, String filePath) {
+        try {
+            FileWriter writer = new FileWriter(filePath);
+            for(int i = 0; i < lines.size(); ++i) {
+                writer.write(lines.get(i).get(0));
+                if(i + 1 != lines.size()) {
+                    writer.write("\n");
+                }
+            }
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void WriteTXTResult(ArrayList<ArrayList<String>> lines, String filePath) {
+        try {
+            FileWriter writer = new FileWriter(filePath);
+            ArrayList<ArrayList<String>> calc = Calculation.Calc(lines);
+            for(int i = 0; i < lines.size(); ++i) {
+                writer.write(calc.get(i).get(0));
+                if(i + 1 != calc.size()) {
+                    writer.write("\n");
+                }
+            }
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
