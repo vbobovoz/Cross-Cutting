@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.Archivation.Archiving;
+import org.example.Compressing.Compressing;
 import org.example.ReadingAndWriting.JSON;
 import org.example.ReadingAndWriting.TXT;
 import org.example.ReadingAndWriting.XML;
@@ -24,5 +25,8 @@ public class Main{
         Archiving.createArchive(filePaths, "outputFiles/Files.zip");
 
         Archiving.extractArchive("outputFiles/Files.zip", "extractArchiveFiles");
+
+        Compressing.compressFile("inputFiles/input.json", 9);
+        Compressing.decompressFile("inputFiles/input.json.zip");
     }
 }
