@@ -20,8 +20,8 @@ public class Main {
 //
 //        ArrayList<ArrayList<String>> res = Calculation.Calc(xmlLines);
 //        System.out.println(res);
-
-        ArrayList<ArrayList<String>> txtLines = TXT.ReadTXT("inputFiles/input.txt");
-        TXT.WriteTXTResult(txtLines, "outputFiles/output.txt");
+//
+//        ArrayList<ArrayList<String>> txtLines = TXT.ReadTXT("inputFiles/input.txt");
+//        TXT.WriteTXTResult(txtLines, "outputFiles/output.txt");
     }
 }
