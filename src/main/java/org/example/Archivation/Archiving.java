@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
 import java.util.zip.ZipEntry;
+import java.util.zip.ZipFile;
 import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
 
@@ -58,6 +59,14 @@ public class Archiving {
             fis.close();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    public static boolean isArchived(String fileName) {
+        try {
+            return new ZipFile(fileName).size() > 0;
+        } catch (IOException e) {
+            return false;
         }
     }
 }
