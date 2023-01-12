@@ -1,4 +1,4 @@
-package org.example.Archivation;
+package org.example.Archives.ZIP;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -10,8 +10,8 @@ import java.util.zip.ZipFile;
 import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
 
-public class Archiving {
-    public static void createArchive(List<String> inputFilePaths, String outputFilePath) {
+public class ArchivingZIP {
+    public static void createArchiveZIP(List<String> inputFilePaths, String outputFilePath) {
         try {
             FileOutputStream fos = new FileOutputStream(outputFilePath);
             ZipOutputStream zos = new ZipOutputStream(fos);
@@ -35,7 +35,7 @@ public class Archiving {
         }
     }
 
-    public static void extractArchive(String archivePath, String directory) {
+    public static void extractArchiveZIP(String archivePath, String directory) {
         try {
             FileInputStream fis = new FileInputStream(archivePath);
             ZipInputStream zis = new ZipInputStream(fis);
@@ -62,7 +62,7 @@ public class Archiving {
         }
     }
 
-    public static boolean isArchived(String fileName) {
+    public static boolean isArchivedZIP(String fileName) {
         try {
             return new ZipFile(fileName).size() > 0;
         } catch (IOException e) {

@@ -1,7 +1,6 @@
 package org.example.Encryption;
 
 import javax.crypto.*;
-import javax.crypto.spec.SecretKeySpec;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;

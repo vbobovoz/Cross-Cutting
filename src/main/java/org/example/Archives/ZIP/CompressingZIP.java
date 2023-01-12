@@ -1,12 +1,12 @@
-package org.example.Compressing;
+package org.example.Archives.ZIP;
 
 import java.io.*;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
 
-public class Compressing {
-    public static void compressFile(String filePath, int compressionLevel) throws IllegalArgumentException {
+public class CompressingZIP {
+    public static void compressFileZIP(String filePath, int compressionLevel) throws IllegalArgumentException {
         if(compressionLevel < 0 || compressionLevel > 9)
             throw new IllegalArgumentException("Invalid compression level, it should be between 0 and 9");
         try {
@@ -34,7 +34,7 @@ public class Compressing {
         }
     }
 
-    public static void decompressFile(String zipFilePath) throws FileNotFoundException, IOException {
+    public static void decompressFileZIP(String zipFilePath) throws FileNotFoundException, IOException {
         FileInputStream fis = new FileInputStream(zipFilePath);
         ZipInputStream zis = new ZipInputStream(fis);
 
