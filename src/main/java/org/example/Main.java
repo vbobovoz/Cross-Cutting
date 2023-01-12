@@ -1,16 +1,20 @@
 package org.example;
-import org.example.FileBuilder.FileBuilder;
-import org.example.Interfaces.ReadingAndWritingInterface;
 
-public class Main {
-    private static ReadingAndWritingInterface rw;
+import org.example.ReadingAndWriting.JSON;
+import org.example.ReadingAndWriting.TXT;
+import org.example.ReadingAndWriting.XML;
+
+import java.util.ArrayList;
+
+public class Main{
     public static void main(String[] args) throws Exception {
-        String fileType, filePath;
-        fileType = "txt";
-        filePath = "inputFiles/input.txt";
+        ArrayList<ArrayList<String>> txtData = new ArrayList<>(TXT.ReadTXT("inputFiles/input.txt"));
+        TXT.WriteResultTXT(txtData, "outputFiles/output.txt");
 
-        FileBuilder fileBuilder = new FileBuilder(fileType, filePath);
-        rw = fileBuilder.getFileReader();
-        System.out.println(rw.Read(filePath));
+        ArrayList<ArrayList<String>> jsonData = new ArrayList<>(JSON.ReadJSON("inputFiles/input.json"));
+        JSON.WriteResultJSON(jsonData, "outputFiles/output.json");
+
+        ArrayList<ArrayList<String>> xmlData = new ArrayList<>(XML.ReadXML("inputFiles/input.xml"));
+        XML.WriteResultXML(xmlData, "outputFiles/output.xml");
     }
 }

@@ -19,13 +19,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class XML extends FileReaderWriterInfo {
-    public XML(String filePath) {
-        super(filePath);
-    }
-
-    @Override
-    public ArrayList<ArrayList<String>> Read(String filePath) throws Exception {
+public class XML {
+    public static ArrayList<ArrayList<String>> ReadXML(String filePath) throws Exception {
         try {
             ArrayList<ArrayList<String>> lines = new ArrayList<>();
             XMLInputFactory factory = XMLInputFactory.newInstance();
@@ -69,8 +64,7 @@ public class XML extends FileReaderWriterInfo {
         return node;
     }
 
-    @Override
-    public void WriteResult(ArrayList<ArrayList<String>> lines, String filePath) throws ParserConfigurationException, TransformerException {
+    public static void WriteResultXML(ArrayList<ArrayList<String>> lines, String filePath) throws ParserConfigurationException, TransformerException {
         ArrayList<ArrayList<String>> calc = Calculation.Calc(lines);
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder;
@@ -89,8 +83,7 @@ public class XML extends FileReaderWriterInfo {
         transform.transform(source, result);
     }
 
-    @Override
-    public void Write(ArrayList<ArrayList<String>> lines, String filePath) throws ParserConfigurationException, TransformerException {
+    public static void WriteXML(ArrayList<ArrayList<String>> lines, String filePath) throws ParserConfigurationException, TransformerException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder;
         builder = factory.newDocumentBuilder();

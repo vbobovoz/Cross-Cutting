@@ -11,13 +11,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class JSON extends FileReaderWriterInfo {
-    public JSON(String filePath) {
-        super(filePath);
-    }
-
-    @Override
-    public ArrayList<ArrayList<String>> Read(String filePath) {
+public class JSON {
+    public static ArrayList<ArrayList<String>> ReadJSON(String filePath) {
         try {
             ArrayList<ArrayList<String>> lines = new ArrayList<>();
             lines.add(0, new ArrayList<>());
@@ -39,8 +34,7 @@ public class JSON extends FileReaderWriterInfo {
         }
     }
 
-    @Override
-    public void Write(ArrayList<ArrayList<String>> lines, String filePath) {
+    public static void WriteJSON(ArrayList<ArrayList<String>> lines, String filePath) {
         try {
             FileWriter writer = new FileWriter(filePath);
             writer.write("[" + "\n");
@@ -65,8 +59,7 @@ public class JSON extends FileReaderWriterInfo {
         }
     }
 
-    @Override
-    public void WriteResult(ArrayList<ArrayList<String>> lines, String filePath) {
+    public static void WriteResultJSON(ArrayList<ArrayList<String>> lines, String filePath) {
         try {
             FileWriter writer = new FileWriter(filePath);
             ArrayList<ArrayList<String>> calc = Calculation.Calc(lines);
