@@ -1,10 +1,13 @@
 [
   {
-    "expression1": "10+5",
-    "expression2": "4*2"
+    "expression0": "10+5",
+    "expression1": "4*2"
   },
   {
-    "expression1": "10-5",
-    "expression2": "8*3"
+    "expression0": "10-5",
+    "expression1": "8*3"
+  },
+  {
+    "expression0": "(42-2)/2/2*3"
   }
 ]
