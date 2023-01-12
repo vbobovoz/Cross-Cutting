@@ -2,10 +2,12 @@ package org.example;
 
 import org.example.Archivation.Archiving;
 import org.example.Compressing.Compressing;
+import org.example.Encryption.Encryption;
 import org.example.ReadingAndWriting.JSON;
 import org.example.ReadingAndWriting.TXT;
 import org.example.ReadingAndWriting.XML;
 
+import java.security.Key;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -28,5 +30,8 @@ public class Main{
 
         Compressing.compressFile("inputFiles/input.json", 9);
         Compressing.decompressFile("inputFiles/input.json.zip");
+
+        Key key = Encryption.encrypt("inputFiles/input.json", "encryptFiles/encrypted.json");
+        Encryption.decrypt("encryptFiles/encrypted.json", "encryptFiles/decrypted.json", key);
     }
 }
