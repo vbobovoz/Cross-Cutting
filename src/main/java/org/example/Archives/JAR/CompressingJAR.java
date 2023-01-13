@@ -1,6 +1,8 @@
 package org.example.Archives.JAR;
 
 import java.io.*;
+import java.util.jar.JarEntry;
+import java.util.jar.JarInputStream;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
@@ -26,14 +28,33 @@ public class CompressingJAR {
             zos.close();
             fis.close();
             fos.close();
-
-            System.out.println("File compressed successfully!");
         } catch (Exception e) {
-            System.err.println("Error compressing file: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 
-    public static void decompressFileZIP(String zipFilePath) throws FileNotFoundException, IOException {
+    public static void decompressFileJAR(String jarFilePath) throws FileNotFoundException, IOException {
+        byte[] buffer = new byte[1024];
+        try {
+            FileInputStream fis = new FileInputStream(jarFilePath);
+            JarInputStream jis = new JarInputStream(fis);
+            JarEntry jarEntry = jis.getNextJarEntry();
 
+            while(jarEntry != null) {
+                String fileName = jarEntry.getName();
+                File newFile = new File(fileName);
+                FileOutputStream fos = new FileOutputStream(newFile);
+                int len;
+                while ((len = jis.read(buffer)) > 0) {
+                    fos.write(buffer, 0, len);
+                }
+                fos.close();
+                jarEntry = jis.getNextJarEntry();
+            }
+            jis.close();
+            fis.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
