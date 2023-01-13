@@ -1,7 +1,10 @@
 package org.example;
 
 import org.example.Archives.JAR.ArchivingJAR;
+import org.example.Encryption.Encryption;
 
+import javax.crypto.KeyGenerator;
+import java.security.Key;
 import java.util.Arrays;
 import java.util.List;
 
@@ -29,10 +32,14 @@ public class Main{
         //System.out.println(Archiving.isArchived("inputFiles/input.txt"));
         //System.out.println(Archiving.isArchived("outputFiles/Files.zip"));
 
-        List<String> filePaths = Arrays.asList("inputFiles/input.txt", "inputFiles/input.json", "inputFiles/input.xml");
-        ArchivingJAR.createArchiveJAR(filePaths, "outputFiles/Files.jar");
-        ArchivingJAR.extractArchiveJAR("outputFiles/Files.jar", "extractArchiveFiles");
-        System.out.println(ArchivingJAR.isArchivedJAR("inputFiles/input.txt"));
-        System.out.println(ArchivingJAR.isArchivedJAR("outputFiles/Files.jar"));
+//        List<String> filePaths = Arrays.asList("inputFiles/input.txt", "inputFiles/input.json", "inputFiles/input.xml");
+//        ArchivingJAR.createArchiveJAR(filePaths, "outputFiles/Files.jar");
+//        ArchivingJAR.extractArchiveJAR("outputFiles/Files.jar", "extractArchiveFiles");
+//        System.out.println(ArchivingJAR.isArchivedJAR("inputFiles/input.txt"));
+//        System.out.println(ArchivingJAR.isArchivedJAR("outputFiles/Files.jar"));
+//
+//
+//        Key key = Encryption.encrypt("outputFiles/Files.jar", "encryptFiles/EncryptJAR.jar");
+//        Encryption.decrypt("encryptFiles/EncryptJAR.jar", "encryptFiles/DecryptJAR.jar", key);
     }
 }
