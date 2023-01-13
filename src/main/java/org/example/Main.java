@@ -27,8 +27,6 @@ public class Main{
 //        Compressing.compressFile("inputFiles/input.json", 9);
 //        Compressing.decompressFile("inputFiles/input.json.zip");
 //
-//        Key key = Encryption.encrypt("inputFiles/input.json", "encryptFiles/encrypted.json");
-//        Encryption.decrypt("encryptFiles/encrypted.json", "encryptFiles/decrypted.json", key);
         //System.out.println(Archiving.isArchived("inputFiles/input.txt"));
         //System.out.println(Archiving.isArchived("outputFiles/Files.zip"));
 
@@ -38,8 +36,8 @@ public class Main{
 //        System.out.println(ArchivingJAR.isArchivedJAR("inputFiles/input.txt"));
 //        System.out.println(ArchivingJAR.isArchivedJAR("outputFiles/Files.jar"));
 //
-//
-//        Key key = Encryption.encrypt("outputFiles/Files.jar", "encryptFiles/EncryptJAR.jar");
-//        Encryption.decrypt("encryptFiles/EncryptJAR.jar", "encryptFiles/DecryptJAR.jar", key);
+//        Encryption.encrypt("mysecretkeyforcc", "outputFiles/Files.zip", "encryptFiles/EncryptFiles.zip");
+//        Encryption.decrypt("mysecretkeyforcc", "encryptFiles/encrypted.txt", "encryptFiles/decrypted.txt");
+//        Encryption.decrypt("mysecretkeyforcc", "encryptFiles/EncryptFiles.zip", "encryptFiles/DecryptFiles.zip");
     }
 }
