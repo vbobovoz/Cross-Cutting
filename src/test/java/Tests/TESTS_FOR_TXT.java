@@ -14,7 +14,7 @@ import static junit.framework.TestCase.*;
 
 public class TESTS_FOR_TXT {
     @Test
-    public void testReadTXT() throws IOException {
+    public void ReadTXT_test() throws IOException {
         File file = File.createTempFile("test", ".txt");
         FileWriter writer = new FileWriter(file);
         writer.write("Line 1\nLine 2\nLine 3");
