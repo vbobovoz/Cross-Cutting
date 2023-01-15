@@ -1,15 +1,13 @@
 package org.example;
 
-import org.example.Archives.JAR.ArchivingJAR;
-import org.example.Encryption.Encryption;
-
-import javax.crypto.KeyGenerator;
-import java.security.Key;
-import java.util.Arrays;
-import java.util.List;
+import org.example.ConsoleUI.ConsoleUI;
 
 public class Main{
     public static void main(String[] args) throws Exception {
+        ConsoleUI.consoleUI();
+
+        //Encryption.encrypt("mysecretkeyforcc", "work/input.txt", "work/einput.txt");
+
 //        ArrayList<ArrayList<String>> txtData = new ArrayList<>(TXT.ReadTXT("inputFiles/input.txt"));
 //        TXT.WriteResultTXT(txtData, "outputFiles/output.txt");
 //
@@ -35,7 +33,9 @@ public class Main{
 //        ArchivingJAR.extractArchiveJAR("outputFiles/Files.jar", "extractArchiveFiles");
 //        System.out.println(ArchivingJAR.isArchivedJAR("inputFiles/input.txt"));
 //        System.out.println(ArchivingJAR.isArchivedJAR("outputFiles/Files.jar"));
-//
+
+        //Encryption.encrypt("mysecretkeyforcc", "encryptFiles/DecryptFiles.zip", "encryptFiles/EncryptFiles.zip");
+
 //        Encryption.encrypt("mysecretkeyforcc", "outputFiles/Files.zip", "encryptFiles/EncryptFiles.zip");
 //        Encryption.decrypt("mysecretkeyforcc", "encryptFiles/encrypted.txt", "encryptFiles/decrypted.txt");
 //        Encryption.decrypt("mysecretkeyforcc", "encryptFiles/EncryptFiles.zip", "encryptFiles/DecryptFiles.zip");
